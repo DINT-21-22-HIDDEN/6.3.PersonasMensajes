@@ -1,0 +1,25 @@
+﻿<Window x:Class="PersonasMensajes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonasMensajes"
+        mc:Ignorable="d"
+        Title="PersonasMensajes" Height="450" Width="800" Icon="assets/personas.ico">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="Margin" Value="0,0,5,10"></Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel Margin="10">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button Command="{Binding Path=AbrirNuevaPersonaCommand}">Nueva persona</Button>
+            <Button Command="{Binding Path=AbrirListadoPersonasCommand}">Listado de personas</Button>
+            <Button Command="{Binding Path=AbrirConsultaPersonaCommand}">Consulta persona</Button>
+        </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="2">
+            <ContentControl Content="{Binding Path=ContenidoVentana}"></ContentControl>
+        </Border>
+    </DockPanel>
+</Window>
