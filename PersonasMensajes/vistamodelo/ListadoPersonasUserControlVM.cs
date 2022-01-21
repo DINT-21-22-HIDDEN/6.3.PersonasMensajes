@@ -38,8 +38,7 @@ namespace PersonasMensajes
 
             WeakReferenceMessenger.Default.Register<ListadoPersonasUserControlVM, PersonaSeleccionadaMessage>(this, (r, m) =>
             {
-                if (!m.HasReceivedResponse)
-                    m.Reply(PersonaSeleccionada);
+                m.Reply(PersonaSeleccionada);
             });
         }
     }
